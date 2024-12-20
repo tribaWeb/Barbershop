@@ -1,0 +1,530 @@
+*{
+    margin: 0;
+    
+}
+body{
+    background-color: black;
+}
+html {
+    scroll-behavior: smooth;
+}
+.header {
+    background-color: rgb(122, 122, 122);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    position: relative; /* Důležité pro relativní pozici loga */
+    gap: 250px;
+    height: 10vh;
+    
+}
+
+.logo-container {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Umožňuje překrývání přes header */
+    top: -30px; /* Logo přesahuje o 20px nahoru */
+}
+
+.logo {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.nav {
+    font-size: 1.5rem;
+    padding: 50px 100px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.nav.left-nav {
+    justify-content: center;
+    width: 400px;
+    
+}
+
+.nav.right-nav {
+    justify-content: center;
+    width: 400px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: silver; /* Zlatavý odstín pro hover efekt */
+  
+}
+
+.hamburger-menu {
+    display: none; /* Skryj hamburger menu na fullscreen */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    z-index: 100;
+}
+/*******************/
+.main {
+    display: flex;
+    height: 90vh; /* Výška sekce */
+    width: 100%;
+}
+
+.text-container {
+    flex: 1; /* Text zabírá 50 % šířky */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    background-color: black;
+    color: silver;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+
+.text-container h1 {
+    font-size: 5.5em;
+    margin-bottom: 20px;
+}
+
+.text-container p {
+    font-size: 1.8em;
+}
+
+.image-container {
+    flex: 1; /* Obrázek zabírá 50 % šířky */
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, black, transparent); /* Přechod z černé vlevo do průhledné vpravo */
+    z-index: -1;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: -2; /* Obrázek je pod přechodem */
+}
+/********************/
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Relativní pozice pro gradient */
+    padding: 40px 20px;
+    height: auto; /* Výška se přizpůsobí obsahu */
+    background-color: black; /* Černé pozadí */
+    overflow: hidden; /* Zabrání přesahu gradientu mimo sekci */
+}
+
+
+
+.about-text,
+.about-image {
+    position: relative; /* Obsah nad gradientem */
+    z-index: 1;
+}
+
+.about-text {
+    margin-right: 20px; /* Mezírka mezi textem a obrázkem */
+    font-family: 'Roboto', sans-serif;
+    color: silver;
+    margin-left: 21px;
+    padding: 0px;
+    padding-top: 100px;
+}
+
+.about-text h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    margin-left:  0px;
+    padding-left: 0px;
+}
+
+.about-text p {
+    max-width: 1100px;
+    font-size: 1.5em;
+    line-height: 1.6;
+}
+
+.about-image {
+    padding-top: 100px;
+    margin-right: 300px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+}
+
+.about-image img {
+    height: auto;
+    border-radius: 10px; /* Zaoblení rohů obrázku */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Jemný stín */
+    position: relative;
+    }
+
+    .gradient-divider {
+        position: relative;
+        width: 100%;
+        height: 100px; /* Výška gradientu */
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 0%,    /* Plně průhledná černá na začátku */
+            rgba(0, 0, 0, 0.5) 35%, /* Poloprůhledná černá na 25% */
+            rgba(0, 0, 0, 1) 100%   /* Plně černá na 100% */
+        );
+        z-index: 2; /* Gradient je nad oběma sekcemi */
+        margin-top: -140px; /* Posun gradientu nahoru přes spodní část `main` */
+        margin-bottom: 0px; /* Posun gradientu dolů přes horní část `about-section` */
+    }
+    
+    
+    /********************/
+    .pricing-section {
+        position: relative; /* Relativní pozice pro správné vrstvy */
+        padding: 200px 20px;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        overflow: hidden; /* Zabrání přesahování obsahu */
+    }
+    
+    .pricing-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 800px;
+        z-index: 0; /* Obrázek zůstává pod ceníkem */
+    }
+    
+    .pricing-background img {
+        padding-top: 100px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Obrázek se přizpůsobí velikosti kontejneru bez deformace */
+    }
+    
+    .pricing-overlay {
+        position: relative; /* Obsah je nad pozadím */
+        z-index: 1; /* Obsah sekce nad obrázkem */
+        background-color: rgba(0, 0, 0, 0.7); /* Překryvná tmavá vrstva */
+        padding: 40px 20px;
+        border-radius: 10px;
+        top: 70px;
+    }
+    
+    .section-title {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+        color: silver;
+    }
+    
+    .pricing-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .pricing-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1000px;
+        padding: 20px 10px;
+        border-bottom: 1px solid silver; /* Jemná čára mezi položkami */
+        font-size: 1.2em;
+    }
+    
+    .service-name {
+        font-weight: 500;
+        color: silver;
+    }
+    
+    .separator {
+        flex-grow: 1; /* Vytvoří čáru mezi názvem a cenou */
+        height: 1px;
+        background-color: gold;
+        margin: 0 10px;
+    }
+    
+    .service-price {
+        font-weight: 700;
+        color: silver;
+    }
+    /***********/
+    .contact-section {
+        padding: 60px 20px;
+        background-color: #000000; /* Světlé pozadí */
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .contact-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap; /* Zajištění responzivity */
+    }
+    
+    .opening-hours {
+        flex: 1; /* Otevírací doba zabírá polovinu šířky */
+        max-width: 500px;
+        text-align: left;
+        padding: 20px;
+     
+    }
+    .opening-hours p{
+        color: silver;
+        margin-bottom: 20px;
+        font-size: 1.1em;
+    }
+    .opening-hours h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        color: silver;
+    }
+    
+    .opening-hours ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: silver;
+    }
+    
+    .opening-hours ul li {
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+    
+    .map-container {
+        flex: 2; /* Mapa zabírá větší část šířky */
+        max-width: 800px;
+        height: 500px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Jemný stín */
+    }
+    
+    .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    @media (max-width: 768px) {
+
+            /* Skryj původní navigaci a přizpůsob ji mobilnímu zobrazení */
+
+        
+            .hamburger-menu {
+                display: flex; /* Zobraz hamburger menu */
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+                position: absolute;
+                top: 30px;
+                right: 20px;
+                z-index: 100;
+            }
+        
+            .hamburger-menu span {
+                width: 25px;
+                height: 3px;
+                background-color: black;
+                transition: all 0.3s ease;
+            }
+        
+            .nav {
+                display: none; /* Skryje hamburger menu na začátku */
+            }
+        
+            .nav.active {
+                display: flex; /* Zobrazí hamburger menu při aktivaci */
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: rgb(122, 122, 122);
+                flex-direction: column;
+                width: 100%;
+                padding: 20px 0;
+                align-items: center;
+                z-index: 99;
+                border-radius: 0 0 10px 10px;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: 20px; /* Mezera mezi položkami */
+                list-style: none; /* Odstranění odrážek */
+                margin: 0;
+                padding: 0;
+                padding-top: 60px;
+            }
+            
+            .nav-list li {
+                padding: 10px 0; /* Prostor mezi položkami */
+                width: 100%; /* Šířka položky pokryje celé menu */
+                text-align: center; /* Zarovnání textu na střed */
+            }
+            
+            .nav-list li a {
+                color: black; /* Černý text */
+                font-size: 1.2rem; /* Velikost textu */
+                text-decoration: none; /* Odstranění podtržení */
+            }
+            
+        
+            .logo-container {
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 120px;
+                height: 120px;
+                z-index: 101; /* Logo bude nad menu */
+            }
+        
+            .logo {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        
+        
+        
+        /* Main */
+
+            .main {
+                padding: 30px 0px;
+            }
+            .text-container{
+                width: 100%;
+                padding: 5px;
+            }
+            .text-container h1 {
+                font-size: 2.2em; /* Zmenšený nadpis */
+                width: 100%;
+            }
+        
+            .text-container p {
+                font-size: 1em; /* Menší text */
+            }
+        
+            .image-container {
+                height: auto; /* Obrázek se přizpůsobí obsahu */
+            }
+        
+            .main-image {
+                object-fit: cover; /* Obrázek zůstává správně oříznutý */
+                opacity: 0.4; /* Mírně vyšší průhlednost pro lepší čitelnost textu */
+            }
+    
+        /* About Section */
+        .about-section {
+            flex-direction: column; /* Text a obrázek pod sebou */
+            padding: 20px;
+            gap: 20px;
+        }
+    
+        .about-text {
+            text-align: center;
+            padding: 10px;
+        }
+    
+        .about-text h2 {
+            font-size: 2em;
+        }
+    
+        .about-text p {
+            font-size: 1em;
+            line-height: 1.4;
+        }
+    
+        .about-image {
+            margin: 0;
+            padding: 10px;
+            width: 50%;
+        }
+    
+        .about-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    
+        /* Pricing Section */
+        .pricing-section {
+            padding: 100px 10px; /* Menší padding na telefonech */
+        }
+    
+        .pricing-overlay {
+            padding: 20px;
+        }
+    
+        .pricing-container {
+            gap: 10px;
+        }
+    
+        .pricing-item {
+            flex-direction: column; /* Přizpůsobí zarovnání ceny pod název */
+            text-align: center;
+            gap: 10px;
+        }
+    
+        .separator {
+            display: none; /* Skrývá čáru mezi názvem a cenou na telefonech */
+        }
+    
+        /* Contact Section */
+        .contact-container {
+            flex-direction: column; /* Zarovná otevírací dobu a mapu pod sebe */
+            align-items: center;
+            gap: 30px;
+        }
+    
+        .opening-hours {
+            max-width: 100%; /* Zabere plnou šířku */
+            text-align: center;
+        }
+    
+        .map-container {
+            max-width: 100%; /* Zabere plnou šířku */
+            height: 300px; /* Menší výška mapy na telefonech */
+        }
+    }
+    

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header class="header">
+        <nav class="nav left-nav">
+            <ul class="nav-list">
+                <li><a href="#onas">O NÁS</a></li>
+                <li><a href="#location">KDE NÁS NAJDETE?</a></li>
+
+            </ul>
+        </nav>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Golden Eye Logo" class="logo">
+        </div>
+        <nav class="nav right-nav">
+            <ul class="nav-list">
+                <li><a href="#services">CENÍK</a></li>
+                <li><a href="#contact">OTEVIRACÍ DOBA</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    
+    <main class="main">
+        <div class="text-container">
+            <h1>VÍTEJTE U <br>GOLDEN EYE</h1>
+            <p>Profesionální služby pro váš dokonalý vzhled. Vyzkoušejte kvalitu, kterou si zasloužíte.</p>
+        </div>
+        <div class="image-container">
+            <div class="image-overlay"></div>
+            <img src="img/portrait-handsome-sunbathed-fashion-man-model-wearing-white-shirt-clothes-posing-street.jpg" alt="Golden Eye Salon" class="main-image">
+        </div>
+    </main>
+    
+    <div class="gradient-divider"></div>
+    
+    <section class="about-section">
+        <div id="onas" class="about-text">
+            <h2>O nás</h2>
+            <p>Vítejte v našem barbershopu, kde se tradice, styl a profesionalita setkávají, aby Vám poskytly jedinečný zážitek z péče o Váš vzhled. Náš tým zkušených barberů kombinuje klasické techniky s moderními trendy, díky čemuž Vám dokážeme nabídnout střih a úpravu vousů přesně podle Vašich představ. Nezáleží na tom, zda hledáte elegantní business účes, precizně vytvarovaný plnovous, nebo potřebujete jen drobnou úpravu – jsme tu pro Vás.
+
+                Klademe důraz na osobní přístup, pečlivost a kvalitní služby. Při každé návštěvě se můžete těšit na příjemnou atmosféru, profesionální produkty a ochotný personál, který Vám rád poradí s výběrem ideálního střihu, správné péče o pokožku nebo vhodné kosmetiky.
+                
+                Přijďte k nám zažít skutečný pánský rituál – nejen obyčejné stříhání vlasů, ale i relaxaci, sebevědomí a styl, který bude vidět na první pohled. Těšíme se na Vaši návštěvu!</p>
+        </div>
+        <div class="about-image">
+            <img src="img/interier2.jpg" alt="">
+        </div>
+    </section>
+    <section class="pricing-section">
+        <div class="pricing-background">
+            <img src="img/pricingtabback.jpg" alt="Pricing Background">
+        </div>       
+        <div id="services" class="pricing-overlay">
+            <h2 class="section-title">Ceník</h2>
+            <div class="pricing-container">
+                <div class="pricing-item">
+                    <span class="service-name">Úprava vlasů</span>
+                    <div class="separator"></div>
+                    <span class="service-price">500 Kč</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="service-name">Úprava vousů</span>
+                    <div class="separator"></div>
+                    <span class="service-price">300 Kč</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="service-name">Holení</span>
+                    <div class="separator"></div>
+                    <span class="service-price">400 Kč</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="service-name">Kompletní péče</span>
+                    <div class="separator"></div>
+                    <span class="service-price">1000 Kč</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section  class="contact-section">
+        <div class="contact-container">
+            <div id="contact" class="opening-hours">
+                <h2>Adresa</h2>
+                <p>Havlíčkova 2605/9 350 02, 2 Cheb 2</p>
+                <h2>Otevírací doba</h2>
+                <ul>
+                    <li>Pondělí: 9:00 - 18:00</li>
+                    <li>Úterý: 9:00 - 18:00</li>
+                    <li>Středa: 9:00 - 18:00</li>
+                    <li>Čtvrtek: 9:00 - 18:00</li>
+                    <li>Pátek: 9:00 - 18:00</li>
+                    <li>Sobota: 10:00 - 14:00</li>
+                    <li>Neděle: Zavřeno</li>
+                </ul>
+            </div>
+            <div id="location" class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.148671044158!2d12.364353049508901!3d50.08350329219585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a0f7006e71a6a7%3A0xa10e11fa223ba271!2sGolden%20Eye%20Barbershop!5e0!3m2!1sen!2scz!4v1734725957876!5m2!1sen!2scz"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <script src="javascript.js"></script>
+</html>
