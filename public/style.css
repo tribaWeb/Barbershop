@@ -29,6 +29,7 @@ html {
     align-items: center;
     position: absolute; /* Umožňuje překrývání přes header */
     top: -30px; /* Logo přesahuje o 20px nahoru */
+    z-index: 50;
 }
 
 .logo {
@@ -346,7 +347,7 @@ html {
         height: 100%;
         border: none;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1500px) {
 
             /* Skryj původní navigaci a přizpůsob ji mobilnímu zobrazení */
 
@@ -528,5 +529,28 @@ html {
             max-width: 100%; /* Zabere plnou šířku */
             height: 300px; /* Menší výška mapy na telefonech */
         }
+    }
+    
+
+
+    @keyframes fadeInFromLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-20px); /* Posun zleva */
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0); /* Návrat na místo */
+        }
+    }
+    
+    .animated {
+        opacity: 0; /* Výchozí neviditelný stav */
+        transform: translateX(-20px); /* Posunutý stav */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Hladké přechody */
+    }
+    
+    .animated.show {
+        animation: fadeInFromLeft 0.5s ease-out forwards; /* Použití animace */
     }
     

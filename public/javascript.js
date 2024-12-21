@@ -37,3 +37,23 @@ function toggleMenu() {
     // Aktivujeme menu
     hamburgerNav.classList.add('active');
 }
+// Funkce pro přidání animace při zobrazení
+function addScrollAnimation() {
+    const animatedElements = document.querySelectorAll('.animated'); // Všechny prvky s třídou 'animated'
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show'); // Přidá třídu 'show', která spustí animaci
+                observer.unobserve(entry.target); // Odpojí pozorovatele po aktivaci
+            }
+        });
+    });
+
+    animatedElements.forEach(el => observer.observe(el)); // Přidání pozorovatele na každý prvek
+}
+
+// Spuštění při načtení stránky
+document.addEventListener("DOMContentLoaded", () => {
+    addScrollAnimation();
+});
